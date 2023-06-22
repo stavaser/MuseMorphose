@@ -1,8 +1,8 @@
 data:
-    data_dir:         ./remi_dataset
+    data_dir:         ./custom_data/ailab17k_from-scratch_remi
     train_split:      ./pickles/train_pieces.pkl
     val_split:        ./pickles/val_pieces.pkl
-    test_split:       ./pickles/test_pieces.pkl
+    test_split:       ./pickles/custom_test_pieces.pkl
     vocab_path:       ./pickles/remi_vocab.pkl
     max_bars:         16                 
     enc_seqlen:       128
@@ -27,7 +27,7 @@ model:
     pretrained_optim_path:       null
 
 training:
-    device:           cuda:0
+    device:           cpu
     ckpt_dir:         ./ckpt/enc_dec_12L-16_bars-seqlen_1280
     trained_steps:    0
     max_epochs:       1000

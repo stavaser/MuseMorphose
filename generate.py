@@ -15,11 +15,11 @@ from scipy.stats import entropy
 
 config_path = sys.argv[1]
 config = yaml.load(open(config_path, 'r'), Loader=yaml.FullLoader)
-
+# print(config)
 device = config['training']['device']
 data_dir = config['data']['data_dir']
 vocab_path = config['data']['vocab_path']
-data_split = 'pickles/test_pieces.pkl'
+data_split = config["data"]["test_split"]
 
 ckpt_path = sys.argv[2]
 out_dir = sys.argv[3]

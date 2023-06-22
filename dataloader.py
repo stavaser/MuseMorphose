@@ -74,7 +74,13 @@ def pickle_load(path):
   return pickle.load(open(path, 'rb'))
 
 def convert_event(event_seq, event2idx, to_ndarr=True):
+  print(event2idx)
+  # event2idx["Note_Pitch_21"] = 175
+  # event2idx["Note_Velocity_100"] = 290
   if isinstance(event_seq[0], dict):
+    # print("is dict")
+    # print('{}_{}'.format(event_seq[0]['name'], event_seq[1]['value']))
+    # print(event2idx["Note_Pitch_21"])
     event_seq = [event2idx['{}_{}'.format(e['name'], e['value'])] for e in event_seq]
   else:
     event_seq = [event2idx[e] for e in event_seq]
@@ -116,6 +122,7 @@ class REMIFullSongTransformerDataset(Dataset):
       self.dec_end_pad_value = self.pad_token
 
   def read_vocab(self):
+    print( pickle_load(self.vocab_file))
     vocab = pickle_load(self.vocab_file)[0]
     self.idx2event = pickle_load(self.vocab_file)[1]
     orig_vocab_size = len(vocab)

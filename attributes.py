@@ -4,9 +4,9 @@ import os, pickle
 import numpy as np
 from collections import Counter
 
-data_dir = 'remi_dataset'
-polyph_out_dir = 'remi_dataset/attr_cls/polyph'
-rhythm_out_dir = 'remi_dataset/attr_cls/rhythm'
+data_dir = './custom_data/ailab17k_from-scratch_remi'
+polyph_out_dir = './custom_data/ailab17k_from-scratch_remi/attr_cls/polyph'
+rhythm_out_dir = './custom_data/ailab17k_from-scratch_remi/attr_cls/rhythm'
 
 rhym_intensity_bounds = [0.2, 0.25, 0.32, 0.38, 0.44, 0.5, 0.63]
 polyphonicity_bounds = [2.63, 3.06, 3.50, 4.00, 4.63, 5.44, 6.44]
